@@ -24,13 +24,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 bg-gradient-to-r from-primary-dark via-primary to-primary-light">
+    <header className="fixed w-full z-50 bg-gradient-to-r from-primary-gradient via-primary-dark to-primary">
       {/* Top Bar */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={topBarVariants}
-        className="bg-primary-dark/50 backdrop-blur-sm text-white py-2"
+        className="bg-primary-gradient text-white py-1"
       >
         <div className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
@@ -59,13 +59,13 @@ const Header = () => {
       </motion.div>
 
       {/* Main Header */}
-      <motion.nav className="container py-4">
+      <motion.nav className="container py-2">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="relative">
             <motion.img 
-              src="/logo/logo.png" 
+              src="/logo/logo-white.png" 
               alt="Dentalyst Logo" 
-              className="h-16 md:h-20"
+              className="h-24 md:h-28"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -114,7 +114,7 @@ const Header = () => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="md:hidden fixed inset-y-0 right-0 w-80 bg-gradient-to-b from-primary to-primary-dark backdrop-blur-lg shadow-2xl p-8"
+              className="md:hidden fixed inset-y-0 right-0 w-80 bg-gradient-to-b from-primary-dark to-primary-gradient backdrop-blur-lg shadow-2xl p-8"
             >
               <div className="flex flex-col space-y-4">
                 {menuItems.map((item) => (

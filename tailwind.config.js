@@ -12,10 +12,10 @@ export default {
       },
       colors: {
         primary: {
-          light: '#4FB8E7',
-          DEFAULT: '#2B95C9',
-          dark: '#1B6A94',
-          gradient: '#155272',
+          light: '#2B95C9',
+          DEFAULT: '#1B6A94',
+          dark: '#0D4A6F',
+          gradient: '#083D5F',
         },
         secondary: {
           light: '#FFB74D',
