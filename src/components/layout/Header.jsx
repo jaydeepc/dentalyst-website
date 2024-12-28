@@ -24,13 +24,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 bg-white shadow-md">
+    <header className="fixed w-full z-50 bg-gradient-to-r from-primary-dark via-primary to-primary-light">
       {/* Top Bar */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={topBarVariants}
-        className="bg-primary text-white py-2"
+        className="bg-primary-dark/50 backdrop-blur-sm text-white py-2"
       >
         <div className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
@@ -42,7 +42,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <a
               href="mailto:dentalystdentalclinic@gmail.com"
-              className="text-sm hover:text-primary-light transition-colors"
+              className="text-sm hover:text-white/80 transition-colors"
             >
               dentalystdentalclinic@gmail.com
             </a>
@@ -50,7 +50,7 @@ const Header = () => {
               href="https://instagram.com/dentalystdentalstudio"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm hover:text-primary-light transition-colors"
+              className="text-sm hover:text-white/80 transition-colors"
             >
               @dentalystdentalstudio
             </a>
@@ -59,43 +59,51 @@ const Header = () => {
       </motion.div>
 
       {/* Main Header */}
-      <nav className="container py-4">
+      <motion.nav className="container py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <img src="/logo/logo.png" alt="Dentalyst Logo" className="h-12" />
+            <motion.img 
+              src="/logo/logo.png" 
+              alt="Dentalyst Logo" 
+              className="h-16 md:h-20"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {menuItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-primary font-medium transition-colors"
+                className="text-white font-medium transition-all hover:scale-105 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all hover:after:w-full"
               >
                 {item.name}
               </a>
             ))}
             <a
               href="/#book"
-              className="btn-primary"
+              className="btn bg-white text-primary hover:bg-white/90 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               Book Appointment
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
+          <motion.button
+            className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
-              <HiX className="w-6 h-6 text-gray-600" />
+              <HiX className="w-7 h-7 text-white" />
             ) : (
-              <HiMenu className="w-6 h-6 text-gray-600" />
+              <HiMenu className="w-7 h-7 text-white" />
             )}
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Menu */}
@@ -106,14 +114,14 @@ const Header = () => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="md:hidden fixed inset-y-0 right-0 w-64 bg-white shadow-lg p-6"
+              className="md:hidden fixed inset-y-0 right-0 w-80 bg-gradient-to-b from-primary to-primary-dark backdrop-blur-lg shadow-2xl p-8"
             >
               <div className="flex flex-col space-y-4">
                 {menuItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-600 hover:text-primary font-medium transition-colors"
+                    className="text-white font-medium transition-all hover:translate-x-2 flex items-center space-x-2"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -121,7 +129,7 @@ const Header = () => {
                 ))}
                 <a
                   href="/#book"
-                  className="btn-primary text-center"
+                  className="btn bg-white text-primary hover:bg-white/90 text-center mt-4 transform hover:scale-105 transition-all duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   Book Appointment
@@ -130,7 +138,7 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </motion.nav>
     </header>
   );
 };

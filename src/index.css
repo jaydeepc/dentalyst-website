@@ -32,10 +32,70 @@
   }
 
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section {
     @apply py-16 sm:py-24;
+  }
+
+  .image-gallery {
+    @apply grid grid-cols-2 gap-6 relative;
+  }
+
+  .image-gallery-item {
+    @apply relative overflow-hidden rounded-xl shadow-xl;
+  }
+
+  .image-gallery-item img {
+    @apply w-full object-cover transition-transform duration-500;
+  }
+
+  .image-gallery-item:hover img {
+    @apply scale-110;
+  }
+
+  .image-gallery-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-primary-dark/50 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .image-gallery-item:hover .image-gallery-overlay {
+    @apply opacity-100;
+  }
+
+  .floating-card {
+    @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl p-6 transition-all duration-300;
+  }
+
+  .floating-card:hover {
+    @apply scale-105;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .gradient-border {
+    @apply relative;
+  }
+
+  .gradient-border::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent transition-all content-[''];
+  }
+
+  .gradient-border:hover::after {
+    @apply w-full;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-sm rounded-lg transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply scale-105;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/90;
   }
 }
