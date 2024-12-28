@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { HiPhone, HiMenu, HiX } from 'react-icons/hi';
+import { HiPhone, HiMenu, HiX, HiMail } from 'react-icons/hi';
+import { FaInstagram } from 'react-icons/fa';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Header = () => {
         initial="hidden"
         animate="visible"
         variants={topBarVariants}
-        className="bg-primary-gradient text-white py-1"
+        className="bg-primary-gradient text-white py-1 hidden sm:block"
       >
         <div className="container flex justify-between items-center">
           <div className="flex items-center space-x-2">
@@ -65,11 +66,35 @@ const Header = () => {
             <motion.img 
               src="/logo/logo-white.png" 
               alt="Dentalyst Logo" 
-              className="h-24 md:h-28"
+              className="h-16 sm:h-20 md:h-24"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
           </Link>
+
+          {/* Mobile Contact Icons */}
+          <div className="flex items-center gap-4 sm:hidden">
+            <a
+              href="tel:+919902312465"
+              className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <HiPhone className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:dentalystdentalclinic@gmail.com"
+              className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <HiMail className="w-5 h-5" />
+            </a>
+            <a
+              href="https://instagram.com/dentalystdentalstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </a>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
@@ -92,16 +117,16 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors ml-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
-              <HiX className="w-7 h-7 text-white" />
+              <HiX className="w-6 h-6 text-white" />
             ) : (
-              <HiMenu className="w-7 h-7 text-white" />
+              <HiMenu className="w-6 h-6 text-white" />
             )}
           </motion.button>
         </div>
@@ -114,7 +139,7 @@ const Header = () => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="md:hidden fixed inset-y-0 right-0 w-80 bg-gradient-to-b from-primary-dark to-primary-gradient backdrop-blur-lg shadow-2xl p-8"
+              className="md:hidden fixed inset-y-0 right-0 w-64 bg-gradient-to-b from-primary-dark to-primary-gradient backdrop-blur-lg shadow-2xl p-6"
             >
               <div className="flex flex-col space-y-4">
                 {menuItems.map((item) => (
