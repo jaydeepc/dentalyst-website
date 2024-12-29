@@ -499,130 +499,240 @@ const InfoModal = ({ service, onClose }) => {
 
         {service.additionalInfo && (
           <div className="mt-8 pt-6 border-t border-gray-200">
-            <h4 className="text-xl font-display font-bold text-primary mb-6">
-              {service.title === 'Dental Braces' ? 'Your Guide to Different Braces Options' : 'When to Choose Each Option'}
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {bracesTypes.map((type, index) => (
-                <motion.div
-                  key={type.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <CrownTypeCard {...type} />
-                </motion.div>
-              ))}
-            </div>
+            {service.title === 'Dental Braces' || service.title === 'Crowns & Veneers' ? (
+              <>
+                <h4 className="text-xl font-display font-bold text-primary mb-6">
+                  {service.title === 'Dental Braces' ? 'Your Guide to Different Braces Options' : 'When to Choose Each Option'}
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {bracesTypes.map((type, index) => (
+                    <motion.div
+                      key={type.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <CrownTypeCard {...type} />
+                    </motion.div>
+                  ))}
+                </div>
 
-            {/* Comparison Table */}
-            {service.title === 'Dental Braces' ? (
-              <div className="mt-8 overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
-                      <th className="px-4 py-3 text-center font-semibold text-primary">Metal Braces</th>
-                      <th className="px-4 py-3 text-center font-semibold text-secondary">Ceramic Braces</th>
-                      <th className="px-4 py-3 text-center font-semibold text-accent">Clear Aligners</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Treatment Time</td>
-                      <td className="px-4 py-3 text-center text-primary">12-24 months</td>
-                      <td className="px-4 py-3 text-center text-secondary">12-24 months</td>
-                      <td className="px-4 py-3 text-center text-accent">12-18 months*</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Visibility</td>
-                      <td className="px-4 py-3 text-center text-primary">Most visible</td>
-                      <td className="px-4 py-3 text-center text-secondary">Less visible</td>
-                      <td className="px-4 py-3 text-center text-accent">Nearly invisible</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Maintenance</td>
-                      <td className="px-4 py-3 text-center text-primary">Regular cleaning</td>
-                      <td className="px-4 py-3 text-center text-secondary">Extra care needed</td>
-                      <td className="px-4 py-3 text-center text-accent">Easy to clean</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Food Restrictions</td>
-                      <td className="px-4 py-3 text-center text-primary">Yes</td>
-                      <td className="px-4 py-3 text-center text-secondary">Yes</td>
-                      <td className="px-4 py-3 text-center text-accent">No</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Best For</td>
-                      <td className="px-4 py-3 text-center text-primary">Complex cases</td>
-                      <td className="px-4 py-3 text-center text-secondary">Aesthetic needs</td>
-                      <td className="px-4 py-3 text-center text-accent">Mild-moderate cases</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p className="text-xs text-gray-500 mt-2">*Treatment time varies based on compliance with wearing aligners 20-22 hours per day</p>
+                {service.title === 'Dental Braces' ? (
+                  <div className="mt-8 overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-gray-50">
+                          <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
+                          <th className="px-4 py-3 text-center font-semibold text-primary">Metal Braces</th>
+                          <th className="px-4 py-3 text-center font-semibold text-secondary">Ceramic Braces</th>
+                          <th className="px-4 py-3 text-center font-semibold text-accent">Clear Aligners</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Treatment Time</td>
+                          <td className="px-4 py-3 text-center text-primary">12-24 months</td>
+                          <td className="px-4 py-3 text-center text-secondary">12-24 months</td>
+                          <td className="px-4 py-3 text-center text-accent">12-18 months*</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Visibility</td>
+                          <td className="px-4 py-3 text-center text-primary">Most visible</td>
+                          <td className="px-4 py-3 text-center text-secondary">Less visible</td>
+                          <td className="px-4 py-3 text-center text-accent">Nearly invisible</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Maintenance</td>
+                          <td className="px-4 py-3 text-center text-primary">Regular cleaning</td>
+                          <td className="px-4 py-3 text-center text-secondary">Extra care needed</td>
+                          <td className="px-4 py-3 text-center text-accent">Easy to clean</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Food Restrictions</td>
+                          <td className="px-4 py-3 text-center text-primary">Yes</td>
+                          <td className="px-4 py-3 text-center text-secondary">Yes</td>
+                          <td className="px-4 py-3 text-center text-accent">No</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Best For</td>
+                          <td className="px-4 py-3 text-center text-primary">Complex cases</td>
+                          <td className="px-4 py-3 text-center text-secondary">Aesthetic needs</td>
+                          <td className="px-4 py-3 text-center text-accent">Mild-moderate cases</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p className="text-xs text-gray-500 mt-2">*Treatment time varies based on compliance with wearing aligners 20-22 hours per day</p>
+                  </div>
+                ) : (
+                  <div className="mt-8 overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-gray-50">
+                          <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
+                          <th className="px-4 py-3 text-center font-semibold text-primary">Zirconia</th>
+                          <th className="px-4 py-3 text-center font-semibold text-secondary">PFM</th>
+                          <th className="px-4 py-3 text-center font-semibold text-accent">All-Ceramic</th>
+                          <th className="px-4 py-3 text-center font-semibold text-primary">Veneers</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Strength</td>
+                          <td className="px-4 py-3 text-center text-primary">Excellent</td>
+                          <td className="px-4 py-3 text-center text-secondary">Very Good</td>
+                          <td className="px-4 py-3 text-center text-accent">Good</td>
+                          <td className="px-4 py-3 text-center text-primary">Moderate</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Aesthetics</td>
+                          <td className="px-4 py-3 text-center text-primary">Excellent</td>
+                          <td className="px-4 py-3 text-center text-secondary">Good</td>
+                          <td className="px-4 py-3 text-center text-accent">Excellent</td>
+                          <td className="px-4 py-3 text-center text-primary">Excellent</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Tooth Reduction</td>
+                          <td className="px-4 py-3 text-center text-primary">Minimal</td>
+                          <td className="px-4 py-3 text-center text-secondary">Moderate</td>
+                          <td className="px-4 py-3 text-center text-accent">Moderate</td>
+                          <td className="px-4 py-3 text-center text-primary">Minimal</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 text-gray-600">Cost</td>
+                          <td className="px-4 py-3 text-center text-primary">Higher</td>
+                          <td className="px-4 py-3 text-center text-secondary">Moderate</td>
+                          <td className="px-4 py-3 text-center text-accent">Higher</td>
+                          <td className="px-4 py-3 text-center text-primary">Moderate</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </>
+            ) : service.title === 'Root Canal Treatment' ? (
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-xl font-display font-bold text-primary mb-4">When Is Root Canal Needed?</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      'Severe tooth decay reaching the pulp',
+                      'Cracked or broken teeth',
+                      'Repeated dental procedures on the tooth',
+                      'Deep cavities',
+                      'Trauma to the tooth'
+                    ].map((item, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
+                        <div className="mr-3 mt-1">
+                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary" />
+                        </div>
+                        <span className="text-gray-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-display font-bold text-primary mb-4">Benefits of Root Canal Treatment</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      'Saves your natural tooth',
+                      'Eliminates pain and infection',
+                      'Restores normal bite and chewing',
+                      'Protects surrounding teeth',
+                      'Cost-effective compared to extraction and replacement'
+                    ].map((item, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
+                        <div className="mr-3 mt-1">
+                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-secondary to-accent" />
+                        </div>
+                        <span className="text-gray-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-display font-bold text-primary mb-4">What to Expect</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      'Treatment typically takes 1-2 visits',
+                      'Local anesthesia ensures comfort',
+                      'Recovery is usually quick',
+                      'Normal activities can resume immediately',
+                      'Minor sensitivity may occur briefly'
+                    ].map((item, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
+                        <div className="mr-3 mt-1">
+                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-accent to-primary" />
+                        </div>
+                        <span className="text-gray-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-display font-bold text-primary mb-4">Post-Treatment Care</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      'Avoid chewing on treated tooth until restored',
+                      'Maintain good oral hygiene',
+                      'Regular dental check-ups',
+                      'Final crown placement as recommended',
+                      'Long-term success with proper care'
+                    ].map((item, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
+                        <div className="mr-3 mt-1">
+                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-accent" />
+                        </div>
+                        <span className="text-gray-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-display font-bold text-primary mb-4">Why Choose Modern Root Canal Treatment</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      'Advanced imaging technology',
+                      'Precise microscopic treatment',
+                      'Better cleaning techniques',
+                      'Improved comfort',
+                      'Higher success rates',
+                      'Faster recovery time'
+                    ].map((item, index) => (
+                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
+                        <div className="mr-3 mt-1">
+                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-secondary to-primary" />
+                        </div>
+                        <span className="text-gray-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ) : (
-              <div className="mt-8 overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
-                      <th className="px-4 py-3 text-center font-semibold text-primary">Zirconia</th>
-                      <th className="px-4 py-3 text-center font-semibold text-secondary">PFM</th>
-                      <th className="px-4 py-3 text-center font-semibold text-accent">All-Ceramic</th>
-                      <th className="px-4 py-3 text-center font-semibold text-primary">Veneers</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Strength</td>
-                      <td className="px-4 py-3 text-center text-primary">Excellent</td>
-                      <td className="px-4 py-3 text-center text-secondary">Very Good</td>
-                      <td className="px-4 py-3 text-center text-accent">Good</td>
-                      <td className="px-4 py-3 text-center text-primary">Moderate</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Aesthetics</td>
-                      <td className="px-4 py-3 text-center text-primary">Excellent</td>
-                      <td className="px-4 py-3 text-center text-secondary">Good</td>
-                      <td className="px-4 py-3 text-center text-accent">Excellent</td>
-                      <td className="px-4 py-3 text-center text-primary">Excellent</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Tooth Reduction</td>
-                      <td className="px-4 py-3 text-center text-primary">Minimal</td>
-                      <td className="px-4 py-3 text-center text-secondary">Moderate</td>
-                      <td className="px-4 py-3 text-center text-accent">Moderate</td>
-                      <td className="px-4 py-3 text-center text-primary">Minimal</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-gray-600">Cost</td>
-                      <td className="px-4 py-3 text-center text-primary">Higher</td>
-                      <td className="px-4 py-3 text-center text-secondary">Moderate</td>
-                      <td className="px-4 py-3 text-center text-accent">Higher</td>
-                      <td className="px-4 py-3 text-center text-primary">Moderate</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div className="whitespace-pre-wrap text-gray-600 text-sm">
+                {service.additionalInfo}
               </div>
             )}
           </div>
         )}
 
         <div className="mt-6 pt-6 border-t border-gray-200">
-          <h4 className="font-semibold text-primary mb-3">Key Features:</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {service.features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-3 rounded-lg text-sm text-gray-600"
-              >
-                {feature}
-              </div>
-            ))}
+            <h4 className="font-semibold text-primary mb-3">Key Features:</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {service.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 p-3 rounded-lg text-sm text-gray-600"
+                >
+                  {feature}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
       </motion.div>
     </motion.div>
   );
