@@ -4,7 +4,8 @@ import { FaTooth, FaTeeth } from 'react-icons/fa';
 import { GiTooth } from 'react-icons/gi';
 import { MdCleaningServices, MdMedicalServices } from 'react-icons/md';
 import { RiSurgicalMaskFill, RiMentalHealthLine } from 'react-icons/ri';
-import { TbDental, TbDentalBroken } from 'react-icons/tb';
+import { TbDental } from 'react-icons/tb';
+import { IoColorPaletteOutline } from 'react-icons/io5';
 import Section from '../common/Section';
 
 const services = [
@@ -36,7 +37,7 @@ const services = [
     icon: <FaTooth className="w-8 h-8" />,
     title: 'Tooth Color Fillings',
     description: 'Natural-looking restorations that blend seamlessly with your teeth.',
-    features: ['Composite materials', 'Invisible repairs', 'Long-lasting results']
+    features: ['Composite materials', 'Long-lasting results', 'Tooth preservation']
   },
   {
     icon: <RiSurgicalMaskFill className="w-8 h-8" />,
@@ -51,16 +52,16 @@ const services = [
     features: ['Full & partial dentures', 'Custom fitting', 'Natural appearance']
   },
   {
-    icon: <TbDentalBroken className="w-8 h-8" />,
-    title: 'Dentures Repair',
-    description: 'Quick and reliable repairs for damaged or broken dentures.',
-    features: ['Same-day service', 'Professional repair', 'Quality materials']
+    icon: <IoColorPaletteOutline className="w-8 h-8" />,
+    title: 'Tooth Whitening',
+    description: 'Professional teeth whitening for a brighter, more confident smile.',
+    features: ['Safe procedure', 'Immediate results', 'Long-lasting brightness']
   },
   {
     icon: <RiMentalHealthLine className="w-8 h-8" />,
     title: 'Preventive Care',
     description: 'Regular check-ups and maintenance for optimal oral health.',
-    features: ['Regular check-ups', 'Fluoride treatment', 'Oral cancer screening']
+    features: ['Regular check-ups', 'Fluoride treatment', 'Dental hygiene education']
   }
 ];
 
