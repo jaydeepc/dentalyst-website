@@ -89,7 +89,56 @@ Porcelain Veneers:
     title: 'Dental Braces',
     description: 'Orthodontic solutions for a perfectly aligned smile.',
     features: ['Metal & ceramic braces', 'Clear aligners', 'Regular adjustments', 'Retainer options'],
-    info: []
+    info: [
+      {
+        title: 'Traditional Metal Braces: Time-Tested Solution',
+        image: '/service-examples/braces/info/Metal-Vs-Ceramic-braces.webp',
+        description: 'Metal braces have helped millions achieve beautiful smiles! These small metal brackets are like tiny guides for your teeth, gently moving them into their perfect positions. While they\'re visible, many of our younger patients love personalizing them with colored bands to match their style. They\'re strong, reliable, and often the fastest way to get that straight smile you\'ve always wanted.',
+        placeholder: 'Comparison of metal and ceramic braces'
+      },
+      {
+        title: 'Invisible Ways to Your Perfect Smile',
+        image: '/service-examples/braces/info/clear-aligners.jpg',
+        description: 'Want straighter teeth without everyone knowing you\'re wearing braces? We offer two amazing options! Ceramic braces work just like metal ones but blend in with your natural tooth color - perfect if you want to be subtle. Clear aligners are like invisible trays that you can remove when eating or for special occasions. Many of our adult patients love these options because they can straighten their teeth without affecting their professional appearance.',
+        placeholder: 'Clear aligner treatment process'
+      }
+    ],
+    additionalInfo: `Your Guide to Choosing the Right Braces:
+
+Metal Braces - Perfect For:
+• Getting the fastest results possible
+• Kids and teens who want to have fun with colored bands
+• Fixing more complex smile issues
+• Families looking for a budget-friendly option
+• Those who want the most reliable option
+
+Ceramic Braces - Great Choice If:
+• You want braces that are less noticeable
+• You're looking for a balance between visibility and effectiveness
+• You have important events coming up (like weddings or presentations)
+• You want the reliability of traditional braces with better aesthetics
+• You're an adult seeking professional-looking treatment
+
+Clear Aligners - Ideal When:
+• You want the most discreet treatment option
+• You enjoy the flexibility of removing them for meals
+• You have mild to moderate alignment needs
+• You play contact sports or musical instruments
+• You want the easiest option for keeping teeth clean
+
+What to Expect During Treatment:
+• Your journey typically takes 12-24 months, depending on your needs
+• We'll see you every 4-6 weeks to check your progress
+• You'll notice improvements within the first few months
+• We'll teach you special cleaning techniques for your braces
+• After treatment, you'll wear a retainer to keep your new smile perfect
+
+Remember:
+• Every smile is unique - we'll help you choose what's best for you
+• Modern braces are more comfortable than ever before
+• The temporary adjustments are worth the lifetime of confidence
+• Regular dental hygiene is extra important during treatment
+• Your beautiful new smile will be worth the journey!`
   },
   {
     icon: <MdCleaningServices className="w-8 h-8" />,
@@ -248,7 +297,41 @@ ServiceCard.propTypes = {
 };
 
 const InfoModal = ({ service, onClose }) => {
-  const crownTypes = [
+  const bracesTypes = service.title === 'Dental Braces' ? [
+    {
+      title: 'Traditional Metal',
+      icon: FaTeeth,
+      color: 'primary',
+      features: [
+        'Most effective for complex cases',
+        'Fastest treatment time',
+        'Fun colored bands for personalization',
+        'Most affordable option'
+      ]
+    },
+    {
+      title: 'Ceramic Braces',
+      icon: TbDental,
+      color: 'secondary',
+      features: [
+        'Tooth-colored brackets',
+        'Less noticeable than metal',
+        'Great for photos & occasions',
+        'Professional appearance'
+      ]
+    },
+    {
+      title: 'Clear Aligners',
+      icon: IoColorPaletteOutline,
+      color: 'accent',
+      features: [
+        'Nearly invisible treatment',
+        'Removable for eating & cleaning',
+        'No food restrictions',
+        'Comfortable to wear'
+      ]
+    }
+  ] : [
     {
       title: 'Zirconia Crowns',
       icon: TbCrown,
@@ -359,9 +442,11 @@ const InfoModal = ({ service, onClose }) => {
 
         {service.additionalInfo && (
           <div className="mt-8 pt-6 border-t border-gray-200">
-            <h4 className="text-xl font-display font-bold text-primary mb-6">When to Choose Each Option</h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {crownTypes.map((type, index) => (
+            <h4 className="text-xl font-display font-bold text-primary mb-6">
+              {service.title === 'Dental Braces' ? 'Your Guide to Different Braces Options' : 'When to Choose Each Option'}
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {bracesTypes.map((type, index) => (
                 <motion.div
                   key={type.title}
                   initial={{ opacity: 0, y: 20 }}
@@ -374,49 +459,97 @@ const InfoModal = ({ service, onClose }) => {
             </div>
 
             {/* Comparison Table */}
-            <div className="mt-8 overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
-                    <th className="px-4 py-3 text-center font-semibold text-primary">Zirconia</th>
-                    <th className="px-4 py-3 text-center font-semibold text-secondary">PFM</th>
-                    <th className="px-4 py-3 text-center font-semibold text-accent">All-Ceramic</th>
-                    <th className="px-4 py-3 text-center font-semibold text-primary">Veneers</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  <tr>
-                    <td className="px-4 py-3 text-gray-600">Strength</td>
-                    <td className="px-4 py-3 text-center text-primary">Excellent</td>
-                    <td className="px-4 py-3 text-center text-secondary">Very Good</td>
-                    <td className="px-4 py-3 text-center text-accent">Good</td>
-                    <td className="px-4 py-3 text-center text-primary">Moderate</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-600">Aesthetics</td>
-                    <td className="px-4 py-3 text-center text-primary">Excellent</td>
-                    <td className="px-4 py-3 text-center text-secondary">Good</td>
-                    <td className="px-4 py-3 text-center text-accent">Excellent</td>
-                    <td className="px-4 py-3 text-center text-primary">Excellent</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-600">Tooth Reduction</td>
-                    <td className="px-4 py-3 text-center text-primary">Minimal</td>
-                    <td className="px-4 py-3 text-center text-secondary">Moderate</td>
-                    <td className="px-4 py-3 text-center text-accent">Moderate</td>
-                    <td className="px-4 py-3 text-center text-primary">Minimal</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-600">Cost</td>
-                    <td className="px-4 py-3 text-center text-primary">Higher</td>
-                    <td className="px-4 py-3 text-center text-secondary">Moderate</td>
-                    <td className="px-4 py-3 text-center text-accent">Higher</td>
-                    <td className="px-4 py-3 text-center text-primary">Moderate</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {service.title === 'Dental Braces' ? (
+              <div className="mt-8 overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
+                      <th className="px-4 py-3 text-center font-semibold text-primary">Metal Braces</th>
+                      <th className="px-4 py-3 text-center font-semibold text-secondary">Ceramic Braces</th>
+                      <th className="px-4 py-3 text-center font-semibold text-accent">Clear Aligners</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Treatment Time</td>
+                      <td className="px-4 py-3 text-center text-primary">12-24 months</td>
+                      <td className="px-4 py-3 text-center text-secondary">12-24 months</td>
+                      <td className="px-4 py-3 text-center text-accent">12-18 months*</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Visibility</td>
+                      <td className="px-4 py-3 text-center text-primary">Most visible</td>
+                      <td className="px-4 py-3 text-center text-secondary">Less visible</td>
+                      <td className="px-4 py-3 text-center text-accent">Nearly invisible</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Maintenance</td>
+                      <td className="px-4 py-3 text-center text-primary">Regular cleaning</td>
+                      <td className="px-4 py-3 text-center text-secondary">Extra care needed</td>
+                      <td className="px-4 py-3 text-center text-accent">Easy to clean</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Food Restrictions</td>
+                      <td className="px-4 py-3 text-center text-primary">Yes</td>
+                      <td className="px-4 py-3 text-center text-secondary">Yes</td>
+                      <td className="px-4 py-3 text-center text-accent">No</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Best For</td>
+                      <td className="px-4 py-3 text-center text-primary">Complex cases</td>
+                      <td className="px-4 py-3 text-center text-secondary">Aesthetic needs</td>
+                      <td className="px-4 py-3 text-center text-accent">Mild-moderate cases</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p className="text-xs text-gray-500 mt-2">*Treatment time varies based on compliance with wearing aligners 20-22 hours per day</p>
+              </div>
+            ) : (
+              <div className="mt-8 overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="px-4 py-3 text-left font-semibold text-gray-600">Feature</th>
+                      <th className="px-4 py-3 text-center font-semibold text-primary">Zirconia</th>
+                      <th className="px-4 py-3 text-center font-semibold text-secondary">PFM</th>
+                      <th className="px-4 py-3 text-center font-semibold text-accent">All-Ceramic</th>
+                      <th className="px-4 py-3 text-center font-semibold text-primary">Veneers</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Strength</td>
+                      <td className="px-4 py-3 text-center text-primary">Excellent</td>
+                      <td className="px-4 py-3 text-center text-secondary">Very Good</td>
+                      <td className="px-4 py-3 text-center text-accent">Good</td>
+                      <td className="px-4 py-3 text-center text-primary">Moderate</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Aesthetics</td>
+                      <td className="px-4 py-3 text-center text-primary">Excellent</td>
+                      <td className="px-4 py-3 text-center text-secondary">Good</td>
+                      <td className="px-4 py-3 text-center text-accent">Excellent</td>
+                      <td className="px-4 py-3 text-center text-primary">Excellent</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Tooth Reduction</td>
+                      <td className="px-4 py-3 text-center text-primary">Minimal</td>
+                      <td className="px-4 py-3 text-center text-secondary">Moderate</td>
+                      <td className="px-4 py-3 text-center text-accent">Moderate</td>
+                      <td className="px-4 py-3 text-center text-primary">Minimal</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 text-gray-600">Cost</td>
+                      <td className="px-4 py-3 text-center text-primary">Higher</td>
+                      <td className="px-4 py-3 text-center text-secondary">Moderate</td>
+                      <td className="px-4 py-3 text-center text-accent">Higher</td>
+                      <td className="px-4 py-3 text-center text-primary">Moderate</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         )}
 
