@@ -23,7 +23,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div>
       <Hero />
       <Services />
       <About />

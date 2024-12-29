@@ -82,7 +82,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
               <a
-                href="/#book"
+                href="/#contact"
                 className="btn-secondary text-center transform hover:scale-105 hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-secondary to-secondary-dark w-full sm:w-auto text-base sm:text-base"
               >
                 Book Appointment

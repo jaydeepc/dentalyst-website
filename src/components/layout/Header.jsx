@@ -123,8 +123,8 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="/#book"
-              onClick={(e) => handleNavClick(e, '/#book')}
+              href="/#contact"
+              onClick={(e) => handleNavClick(e, '/#contact')}
               className="btn bg-white text-primary hover:bg-white/90 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               Book Appointment
@@ -169,8 +169,8 @@ const Header = () => {
                   </a>
                 ))}
                 <a
-                  href="/#book"
-                  onClick={(e) => handleNavClick(e, '/#book')}
+                  href="/#contact"
+                  onClick={(e) => handleNavClick(e, '/#contact')}
                   className="btn bg-white text-primary hover:bg-white/90 text-center mt-4 transform hover:scale-105 transition-all duration-300"
                 >
                   Book Appointment
