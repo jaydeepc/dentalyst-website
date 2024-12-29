@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import HealthAssessment from './components/sections/HealthAssessment';
 import Home from './pages/Home';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <HealthAssessment />
       </div>
     </Router>
   );

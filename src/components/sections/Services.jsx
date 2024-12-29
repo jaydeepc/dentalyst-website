@@ -117,6 +117,7 @@ ServiceCard.propTypes = {
       description: PropTypes.string.isRequired,
       placeholder: PropTypes.string.isRequired,
     })).isRequired,
+    isInteractive: PropTypes.bool,
   }).isRequired,
   index: PropTypes.number.isRequired,
   onShowInfo: PropTypes.func.isRequired,
