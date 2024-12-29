@@ -611,105 +611,149 @@ const InfoModal = ({ service, onClose }) => {
               </>
             ) : service.title === 'Root Canal Treatment' ? (
               <div className="space-y-8">
-                <div>
-                  <h4 className="text-xl font-display font-bold text-primary mb-4">When Is Root Canal Needed?</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      'Severe tooth decay reaching the pulp',
-                      'Cracked or broken teeth',
-                      'Repeated dental procedures on the tooth',
-                      'Deep cavities',
-                      'Trauma to the tooth'
-                    ].map((item, index) => (
-                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
-                        <div className="mr-3 mt-1">
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary" />
-                        </div>
-                        <span className="text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="bg-primary/5 rounded-xl p-6 border border-primary/10 hover:border-primary/20 transition-colors duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                      <GiTooth className="w-6 h-6" />
+                    </div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-3">When Is Root Canal Needed?</h5>
+                    <ul className="space-y-2">
+                      {[
+                        'Severe tooth decay reaching the pulp',
+                        'Cracked or broken teeth',
+                        'Repeated dental procedures',
+                        'Deep cavities',
+                        'Trauma to the tooth'
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-secondary/5 rounded-xl p-6 border border-secondary/10 hover:border-secondary/20 transition-colors duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-4">
+                      <FaTooth className="w-6 h-6" />
+                    </div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-3">Benefits of Treatment</h5>
+                    <ul className="space-y-2">
+                      {[
+                        'Saves your natural tooth',
+                        'Eliminates pain and infection',
+                        'Restores normal bite',
+                        'Protects surrounding teeth',
+                        'Cost-effective solution'
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="bg-accent/5 rounded-xl p-6 border border-accent/10 hover:border-accent/20 transition-colors duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                      <MdMedicalServices className="w-6 h-6" />
+                    </div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-3">What to Expect</h5>
+                    <ul className="space-y-2">
+                      {[
+                        '1-2 visits typically needed',
+                        'Local anesthesia for comfort',
+                        'Quick recovery time',
+                        'Resume normal activities',
+                        'Minimal sensitivity after'
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
                 </div>
 
-                <div>
-                  <h4 className="text-xl font-display font-bold text-primary mb-4">Benefits of Root Canal Treatment</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      'Saves your natural tooth',
-                      'Eliminates pain and infection',
-                      'Restores normal bite and chewing',
-                      'Protects surrounding teeth',
-                      'Cost-effective compared to extraction and replacement'
-                    ].map((item, index) => (
-                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
-                        <div className="mr-3 mt-1">
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-secondary to-accent" />
-                        </div>
-                        <span className="text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="bg-primary/5 rounded-xl p-6 border border-primary/10 hover:border-primary/20 transition-colors duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+                      <RiMentalHealthLine className="w-6 h-6" />
+                    </div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-3">Post-Treatment Care</h5>
+                    <ul className="space-y-2">
+                      {[
+                        'Avoid chewing until restored',
+                        'Maintain good oral hygiene',
+                        'Regular check-ups',
+                        'Final crown placement',
+                        'Long-term success with care'
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
 
-                <div>
-                  <h4 className="text-xl font-display font-bold text-primary mb-4">What to Expect</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      'Treatment typically takes 1-2 visits',
-                      'Local anesthesia ensures comfort',
-                      'Recovery is usually quick',
-                      'Normal activities can resume immediately',
-                      'Minor sensitivity may occur briefly'
-                    ].map((item, index) => (
-                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
-                        <div className="mr-3 mt-1">
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-accent to-primary" />
-                        </div>
-                        <span className="text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-display font-bold text-primary mb-4">Post-Treatment Care</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      'Avoid chewing on treated tooth until restored',
-                      'Maintain good oral hygiene',
-                      'Regular dental check-ups',
-                      'Final crown placement as recommended',
-                      'Long-term success with proper care'
-                    ].map((item, index) => (
-                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
-                        <div className="mr-3 mt-1">
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-accent" />
-                        </div>
-                        <span className="text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-display font-bold text-primary mb-4">Why Choose Modern Root Canal Treatment</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      'Advanced imaging technology',
-                      'Precise microscopic treatment',
-                      'Better cleaning techniques',
-                      'Improved comfort',
-                      'Higher success rates',
-                      'Faster recovery time'
-                    ].map((item, index) => (
-                      <div key={index} className="bg-gray-50 p-4 rounded-lg flex items-start">
-                        <div className="mr-3 mt-1">
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-secondary to-primary" />
-                        </div>
-                        <span className="text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="bg-secondary/5 rounded-xl p-6 border border-secondary/10 hover:border-secondary/20 transition-colors duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-4">
+                      <TbCrown className="w-6 h-6" />
+                    </div>
+                    <h5 className="text-lg font-semibold text-gray-800 mb-3">Modern Technology</h5>
+                    <ul className="space-y-2">
+                      {[
+                        'Advanced imaging tech',
+                        'Microscopic precision',
+                        'Better cleaning methods',
+                        'Improved comfort',
+                        'Higher success rates',
+                        'Fast recovery time'
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-600">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
                 </div>
               </div>
             ) : (
