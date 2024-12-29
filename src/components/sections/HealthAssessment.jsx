@@ -20,7 +20,7 @@ import { MdOutlineCleanHands } from 'react-icons/md';
 const FloatingButton = ({ onClick }) => (
   <motion.button
     onClick={onClick}
-    className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center text-white z-[9999] group relative"
+    className="fixed md:bottom-8 md:right-8 bottom-4 right-4 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center text-white z-[9999] group relative"
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.95 }}
   >
@@ -38,13 +38,13 @@ const FloatingButton = ({ onClick }) => (
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent rounded-full animate-pulse opacity-30" />
       <div className="relative z-10 flex items-center justify-center">
-        <FaRegClipboard className="w-8 h-8" />
+        <FaRegClipboard className="w-6 h-6 md:w-8 md:h-8" />
         <div className="absolute -right-1 -top-1">
-          <FaTeeth className="w-4 h-4" />
+          <FaTeeth className="w-3 h-3 md:w-4 md:h-4" />
         </div>
       </div>
     </motion.div>
-    <div className="absolute -top-12 whitespace-nowrap bg-white text-primary px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <div className="absolute md:-top-12 -top-16 whitespace-nowrap bg-white text-primary px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
       Check Your Oral Health Score
     </div>
   </motion.button>
@@ -324,7 +324,7 @@ const HealthAssessment = () => {
 
   return createPortal(
     <>
-      <div className="fixed bottom-8 right-8 z-[60]">
+      <div className="fixed md:bottom-8 md:right-8 bottom-4 right-4 z-[60]">
         <FloatingButton onClick={() => setIsOpen(true)} />
       </div>
 
