@@ -80,9 +80,66 @@ Porcelain Veneers:
   {
     icon: <GiTooth className="w-8 h-8" />,
     title: 'Root Canal Treatment',
-    description: 'Pain-free procedure to save infected teeth.',
-    features: ['Modern equipment', 'Painless procedure', 'Single visit possible', 'Long-term solution'],
-    info: []
+    description: 'Pain-free procedure to save infected teeth using advanced techniques.',
+    features: [
+      'Modern equipment',
+      'Painless procedure',
+      'Single visit possible',
+      'Long-term solution',
+      'Digital X-rays',
+      'Advanced sterilization'
+    ],
+    info: [
+      {
+        title: 'Understanding Root Canal Treatment',
+        image: '/service-examples/root-canal/info/what-is-root-canal-treatment.jpg',
+        description: 'Root canal treatment is a dental procedure that saves severely damaged or infected teeth. Instead of removing the tooth, we clean out the infected pulp, disinfect the canals, and seal them to prevent future infections. This preserves your natural tooth and maintains your smile. Modern techniques make the procedure virtually painless.',
+        placeholder: 'Root canal treatment overview'
+      },
+      {
+        title: 'Step-by-Step Treatment Process',
+        image: '/service-examples/root-canal/info/root-canal-treatment-procedure-step-by-step.jpg',
+        description: 'Our root canal procedure follows precise steps for optimal results: 1) Digital X-rays and examination to assess the infection, 2) Local anesthesia for complete comfort, 3) Removal of infected pulp, 4) Thorough cleaning and shaping of canals, 5) Filling with biocompatible material, 6) Final restoration with a crown for protection.',
+        placeholder: 'Treatment procedure steps'
+      }
+    ],
+    additionalInfo: `What You Need to Know About Root Canal Treatment:
+
+When Is Root Canal Needed?
+• Severe tooth decay reaching the pulp
+• Cracked or broken teeth
+• Repeated dental procedures on the tooth
+• Deep cavities
+• Trauma to the tooth
+
+Benefits of Root Canal Treatment:
+• Saves your natural tooth
+• Eliminates pain and infection
+• Restores normal bite and chewing
+• Protects surrounding teeth
+• Cost-effective compared to extraction and replacement
+
+What to Expect:
+• Treatment typically takes 1-2 visits
+• Local anesthesia ensures comfort
+• Recovery is usually quick
+• Normal activities can resume immediately
+• Minor sensitivity may occur briefly
+
+Post-Treatment Care:
+• Avoid chewing on treated tooth until restored
+• Maintain good oral hygiene
+• Regular dental check-ups
+• Final crown placement as recommended
+• Long-term success with proper care
+
+Why Choose Modern Root Canal Treatment:
+• Advanced imaging technology
+• Precise microscopic treatment
+• Better cleaning techniques
+• Improved comfort
+• Higher success rates
+• Faster recovery time`
   },
   {
     icon: <FaTeeth className="w-8 h-8" />,
