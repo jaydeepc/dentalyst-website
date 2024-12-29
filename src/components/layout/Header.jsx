@@ -14,6 +14,20 @@ const Header = () => {
     { name: 'Contact', href: '/#contact' },
   ];
 
+  const handleNavClick = (e, href) => {
+    if (href.includes('#')) {
+      e.preventDefault();
+      const id = href.split('#')[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Update URL without triggering navigation
+        window.history.pushState(null, '', href);
+      }
+    }
+    setIsOpen(false);
+  };
+
   const topBarVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
@@ -102,6 +116,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-white font-medium transition-all hover:scale-105 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all hover:after:w-full"
               >
                 {item.name}
@@ -109,6 +124,7 @@ const Header = () => {
             ))}
             <a
               href="/#book"
+              onClick={(e) => handleNavClick(e, '/#book')}
               className="btn bg-white text-primary hover:bg-white/90 transform hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               Book Appointment
@@ -146,16 +162,16 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="text-white font-medium transition-all hover:translate-x-2 flex items-center space-x-2"
-                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </a>
                 ))}
                 <a
                   href="/#book"
+                  onClick={(e) => handleNavClick(e, '/#book')}
                   className="btn bg-white text-primary hover:bg-white/90 text-center mt-4 transform hover:scale-105 transition-all duration-300"
-                  onClick={() => setIsOpen(false)}
                 >
                   Book Appointment
                 </a>
