@@ -1,245 +1,14 @@
-import { motion, AnimatePresence } from 'framer-motion';
+ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaTooth, FaTeeth } from 'react-icons/fa';
 import { GiTooth } from 'react-icons/gi';
-import { MdCleaningServices, MdMedicalServices } from 'react-icons/md';
-import { RiSurgicalMaskFill, RiMentalHealthLine } from 'react-icons/ri';
+import { MdMedicalServices } from 'react-icons/md';
+import { RiMentalHealthLine } from 'react-icons/ri';
 import { TbDental, TbCrown } from 'react-icons/tb';
 import { IoColorPaletteOutline } from 'react-icons/io5';
 import Section from '../common/Section';
-
-const services = [
-  {
-    icon: <TbCrown className="w-8 h-8" />,
-    title: 'Crowns & Veneers',
-    description: 'Beautiful, natural-looking solutions to restore and enhance your smile with advanced materials and techniques.',
-    features: [
-      'Metal-free Zirconia crowns',
-      'Porcelain veneers',
-      'PFM & ceramic crowns',
-      'Inlays & Onlays'
-    ],
-    info: [
-      {
-        title: 'Understanding Zirconia Crowns',
-        image: '/service-examples/crowns-veneers/info/What-is-Zirconia-Crown.jpg',
-        description: 'Zirconia crowns are the latest advancement in dental technology, offering exceptional strength and natural aesthetics. These metal-free crowns are biocompatible, highly durable, and look just like natural teeth, making them perfect for both front and back teeth.',
-        placeholder: 'Zirconia crown structure and benefits'
-      },
-      {
-        title: 'Types of Dental Crowns',
-        image: '/service-examples/crowns-veneers/info/three-types-of-dental-crowns.jpg',
-        description: 'Choose from various crown options including all-ceramic, porcelain-fused-to-metal (PFM), and zirconia. Each type has its unique advantages, and we\'ll help you select the best option based on your specific needs, location of the tooth, and aesthetic goals.',
-        placeholder: 'Comparison of different crown types'
-      },
-      {
-        title: 'Zirconia vs Traditional Crowns',
-        image: '/service-examples/crowns-veneers/info/pfm-vs-zerconia-crowns.jpg',
-        description: 'Compared to traditional PFM crowns, zirconia crowns offer superior aesthetics with no dark lines at the gum, better durability, and require less tooth reduction. They\'re also completely metal-free, making them an excellent choice for patients with metal sensitivities.',
-        placeholder: 'Side-by-side comparison of crown types'
-      },
-      {
-        title: 'Porcelain Veneers',
-        image: '/service-examples/crowns-veneers/info/Porcelain Veneers.jpg',
-        description: 'Transform your smile with ultra-thin porcelain veneers. These custom-made shells are bonded to the front of your teeth to improve their appearance. Perfect for fixing discoloration, chips, gaps, or misshapen teeth while preserving your natural tooth structure.',
-        placeholder: 'Veneer application and benefits'
-      }
-    ],
-    additionalInfo: `When to Choose Each Option:
-
-Zirconia Crowns:
-• Back teeth requiring maximum strength
-• Visible teeth needing natural aesthetics
-• Patients with metal allergies
-• Cases requiring minimal tooth reduction
-
-PFM Crowns:
-• Cost-effective full coverage option
-• Situations requiring proven durability
-• Areas with less aesthetic concern
-
-All-Ceramic Crowns:
-• Front teeth requiring maximum aesthetics
-• Patients preferring metal-free options
-• Cases with adequate tooth structure
-
-Porcelain Veneers:
-• Front teeth with cosmetic concerns
-• Minor alignment issues
-• Discoloration resistant to whitening
-• Chips or worn edges`
-  },
-  {
-    icon: <MdMedicalServices className="w-8 h-8" />,
-    title: 'Dental Consultation',
-    description: 'Comprehensive examination and personalized treatment planning.',
-    features: ['Digital X-rays', 'Treatment planning', 'Cost estimates', 'Insurance guidance'],
-    info: []
-  },
-  {
-    icon: <GiTooth className="w-8 h-8" />,
-    title: 'Root Canal Treatment',
-    description: 'Pain-free procedure to save infected teeth using advanced techniques.',
-    features: [
-      'Modern equipment',
-      'Painless procedure',
-      'Single visit possible',
-      'Long-term solution',
-      'Digital X-rays',
-      'Advanced sterilization'
-    ],
-    info: [
-      {
-        title: 'Understanding Root Canal Treatment',
-        image: '/service-examples/root-canal/info/what-is-root-canal-treatment.jpg',
-        description: 'Root canal treatment is a dental procedure that saves severely damaged or infected teeth. Instead of removing the tooth, we clean out the infected pulp, disinfect the canals, and seal them to prevent future infections. This preserves your natural tooth and maintains your smile. Modern techniques make the procedure virtually painless.',
-        placeholder: 'Root canal treatment overview'
-      },
-      {
-        title: 'Step-by-Step Treatment Process',
-        image: '/service-examples/root-canal/info/root-canal-treatment-procedure-step-by-step.jpg',
-        description: 'Our root canal procedure follows precise steps for optimal results: 1) Digital X-rays and examination to assess the infection, 2) Local anesthesia for complete comfort, 3) Removal of infected pulp, 4) Thorough cleaning and shaping of canals, 5) Filling with biocompatible material, 6) Final restoration with a crown for protection.',
-        placeholder: 'Treatment procedure steps'
-      }
-    ],
-    additionalInfo: `What You Need to Know About Root Canal Treatment:
-
-When Is Root Canal Needed?
-• Severe tooth decay reaching the pulp
-• Cracked or broken teeth
-• Repeated dental procedures on the tooth
-• Deep cavities
-• Trauma to the tooth
-
-Benefits of Root Canal Treatment:
-• Saves your natural tooth
-• Eliminates pain and infection
-• Restores normal bite and chewing
-• Protects surrounding teeth
-• Cost-effective compared to extraction and replacement
-
-What to Expect:
-• Treatment typically takes 1-2 visits
-• Local anesthesia ensures comfort
-• Recovery is usually quick
-• Normal activities can resume immediately
-• Minor sensitivity may occur briefly
-
-Post-Treatment Care:
-• Avoid chewing on treated tooth until restored
-• Maintain good oral hygiene
-• Regular dental check-ups
-• Final crown placement as recommended
-• Long-term success with proper care
-
-Why Choose Modern Root Canal Treatment:
-• Advanced imaging technology
-• Precise microscopic treatment
-• Better cleaning techniques
-• Improved comfort
-• Higher success rates
-• Faster recovery time`
-  },
-  {
-    icon: <FaTeeth className="w-8 h-8" />,
-    title: 'Dental Braces',
-    description: 'Orthodontic solutions for a perfectly aligned smile.',
-    features: ['Metal & ceramic braces', 'Clear aligners', 'Regular adjustments', 'Retainer options'],
-    info: [
-      {
-        title: 'Traditional Metal Braces: Time-Tested Solution',
-        image: '/service-examples/braces/info/Metal-Vs-Ceramic-braces.webp',
-        description: 'Metal braces have helped millions achieve beautiful smiles! These small metal brackets are like tiny guides for your teeth, gently moving them into their perfect positions. While they\'re visible, many of our younger patients love personalizing them with colored bands to match their style. They\'re strong, reliable, and often the fastest way to get that straight smile you\'ve always wanted.',
-        placeholder: 'Comparison of metal and ceramic braces'
-      },
-      {
-        title: 'Invisible Ways to Your Perfect Smile',
-        image: '/service-examples/braces/info/clear-aligners.jpg',
-        description: 'Want straighter teeth without everyone knowing you\'re wearing braces? We offer two amazing options! Ceramic braces work just like metal ones but blend in with your natural tooth color - perfect if you want to be subtle. Clear aligners are like invisible trays that you can remove when eating or for special occasions. Many of our adult patients love these options because they can straighten their teeth without affecting their professional appearance.',
-        placeholder: 'Clear aligner treatment process'
-      }
-    ],
-    additionalInfo: `Your Guide to Choosing the Right Braces:
-
-Metal Braces - Perfect For:
-• Getting the fastest results possible
-• Kids and teens who want to have fun with colored bands
-• Fixing more complex smile issues
-• Families looking for a budget-friendly option
-• Those who want the most reliable option
-
-Ceramic Braces - Great Choice If:
-• You want braces that are less noticeable
-• You're looking for a balance between visibility and effectiveness
-• You have important events coming up (like weddings or presentations)
-• You want the reliability of traditional braces with better aesthetics
-• You're an adult seeking professional-looking treatment
-
-Clear Aligners - Ideal When:
-• You want the most discreet treatment option
-• You enjoy the flexibility of removing them for meals
-• You have mild to moderate alignment needs
-• You play contact sports or musical instruments
-• You want the easiest option for keeping teeth clean
-
-What to Expect During Treatment:
-• Your journey typically takes 12-24 months, depending on your needs
-• We'll see you every 4-6 weeks to check your progress
-• You'll notice improvements within the first few months
-• We'll teach you special cleaning techniques for your braces
-• After treatment, you'll wear a retainer to keep your new smile perfect
-
-Remember:
-• Every smile is unique - we'll help you choose what's best for you
-• Modern braces are more comfortable than ever before
-• The temporary adjustments are worth the lifetime of confidence
-• Regular dental hygiene is extra important during treatment
-• Your beautiful new smile will be worth the journey!`
-  },
-  {
-    icon: <MdCleaningServices className="w-8 h-8" />,
-    title: 'Scaling and Polishing',
-    description: 'Professional cleaning for optimal oral hygiene.',
-    features: ['Deep cleaning', 'Stain removal', 'Gum health care', 'Fresh breath'],
-    info: []
-  },
-  {
-    icon: <FaTooth className="w-8 h-8" />,
-    title: 'Tooth Color Fillings',
-    description: 'Natural-looking restorations that blend perfectly.',
-    features: ['Invisible repairs', 'Durable material', 'Immediate results', 'Preserves tooth'],
-    info: []
-  },
-  {
-    icon: <RiSurgicalMaskFill className="w-8 h-8" />,
-    title: 'Dental Surgery',
-    description: 'Expert surgical procedures with focus on comfort.',
-    features: ['Wisdom tooth removal', 'Dental implants', 'Bone grafting', 'Surgical extractions'],
-    info: []
-  },
-  {
-    icon: <TbDental className="w-8 h-8" />,
-    title: 'Dentures',
-    description: 'Custom-made replacements for a natural-looking smile.',
-    features: ['Full dentures', 'Partial dentures', 'Custom fitting', 'Natural look'],
-    info: []
-  },
-  {
-    icon: <IoColorPaletteOutline className="w-8 h-8" />,
-    title: 'Tooth Whitening',
-    description: 'Professional whitening for a brighter smile.',
-    features: ['Safe procedure', 'Quick results', 'Long-lasting', 'Custom trays'],
-    info: []
-  },
-  {
-    icon: <RiMentalHealthLine className="w-8 h-8" />,
-    title: 'Preventive Care',
-    description: 'Regular maintenance for long-term oral health.',
-    features: ['Regular check-ups', 'Fluoride treatment', 'Oral hygiene tips', 'Early detection'],
-    info: []
-  }
-];
+import { services } from './servicesData';
 
 const CrownTypeCard = ({ title, features, icon: Icon, color }) => (
   <div className={`bg-${color}/5 rounded-xl p-6 border border-${color}/10 hover:border-${color}/20 transition-colors duration-300`}>
@@ -491,7 +260,7 @@ const InfoModal = ({ service, onClose }) => {
               </div>
               <div className="p-4">
                 <h4 className="font-semibold text-primary mb-2">{item.title}</h4>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <p className="text-gray-600 text-sm whitespace-pre-line">{item.description}</p>
               </div>
             </motion.div>
           ))}
@@ -756,6 +525,59 @@ const InfoModal = ({ service, onClose }) => {
                   </motion.div>
                 </div>
               </div>
+            ) : Array.isArray(service.additionalInfo) ? (
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {service.additionalInfo.map((section, index) => (
+                    <motion.div
+                      key={section.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 rounded-xl p-6 border border-primary/10 hover:border-primary/20 transition-colors duration-300"
+                    >
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center text-primary mb-4">
+                        {section.icon === 'clipboard-list' && (
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                          </svg>
+                        )}
+                        {section.icon === 'search' && (
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          </svg>
+                        )}
+                        {section.icon === 'chart-bar' && (
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                          </svg>
+                        )}
+                        {section.icon === 'credit-card' && (
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                          </svg>
+                        )}
+                        {section.icon === 'calendar' && (
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        )}
+                      </div>
+                      <h5 className="text-lg font-semibold text-gray-800 mb-3">{section.title}</h5>
+                      <ul className="space-y-2">
+                        {section.items.map((item, idx) => (
+                          <li key={idx} className="flex items-start text-sm text-gray-600">
+                            <svg className="w-5 h-5 mr-2 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             ) : (
               <div className="whitespace-pre-wrap text-gray-600 text-sm">
                 {service.additionalInfo}
@@ -794,7 +616,14 @@ InfoModal.propTypes = {
       description: PropTypes.string.isRequired,
       placeholder: PropTypes.string.isRequired,
     })).isRequired,
-    additionalInfo: PropTypes.string,
+    additionalInfo: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired,
+        items: PropTypes.arrayOf(PropTypes.string).isRequired
+      }))
+    ]),
   }).isRequired,
   onClose: PropTypes.func.isRequired,
 };
