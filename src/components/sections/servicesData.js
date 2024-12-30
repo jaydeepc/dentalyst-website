@@ -254,5 +254,95 @@ export const services = [
     description: 'Regular maintenance for long-term oral health.',
     features: ['Regular check-ups', 'Fluoride treatment', 'Oral hygiene tips', 'Early detection'],
     info: []
+  },
+  {
+    icon: React.createElement(TbDental, { className: "w-8 h-8" }),
+    title: 'Root Canal Treatment',
+    description: 'Advanced endodontic therapy to save damaged teeth and relieve pain.',
+    features: [
+      'Pain relief',
+      'Tooth preservation',
+      'Modern techniques',
+      'High success rate'
+    ],
+    info: [
+      {
+        title: 'What is Root Canal Treatment?',
+        image: '/service-examples/root-canal/info/what-is-root-canal-treatment.jpg',
+        description: 'Root canal treatment is a dental procedure that treats infection at the center of a tooth. The treatment is needed when the blood or nerve supply of the tooth (known as the pulp) becomes infected due to decay, leaky fillings, or damage to teeth.',
+        placeholder: 'Root canal treatment explanation'
+      },
+      {
+        title: 'Treatment Procedure',
+        image: '/service-examples/root-canal/info/root-canal-treatment-procedure-step-by-step.jpg',
+        description: 'Our root canal procedure uses advanced techniques and technology to ensure your comfort and the best possible outcome. The process involves removing infected pulp, cleaning the canal, and sealing it to prevent future infection.',
+        placeholder: 'Root canal procedure steps'
+      }
+    ],
+    comparison: {
+      headers: ['Aspect', 'Traditional Method', 'Modern Technique'],
+      rows: [
+        {
+          feature: 'Treatment Time',
+          values: [
+            'Multiple long visits',
+            'Usually completed in 1-2 visits'
+          ]
+        },
+        {
+          feature: 'Pain Level',
+          values: [
+            'May be uncomfortable',
+            'Minimal discomfort with advanced anesthesia'
+          ]
+        },
+        {
+          feature: 'Success Rate',
+          values: [
+            '85-90%',
+            '95-98% with modern techniques'
+          ]
+        },
+        {
+          feature: 'Recovery Time',
+          values: [
+            'Several days of discomfort',
+            'Minimal recovery time needed'
+          ]
+        }
+      ]
+    },
+    additionalInfo: [
+      {
+        title: 'When is it Needed?',
+        icon: React.createElement(MdMedicalServices, { className: "w-6 h-6" }),
+        items: [
+          'Severe tooth decay',
+          'Cracked or damaged tooth',
+          'Deep cavity reaching the pulp',
+          'Repeated dental procedures on tooth'
+        ]
+      },
+      {
+        title: 'Benefits',
+        icon: React.createElement(FaTooth, { className: "w-6 h-6" }),
+        items: [
+          'Saves natural tooth',
+          'Eliminates pain and infection',
+          'Restores normal bite and function',
+          'Long-lasting results'
+        ]
+      },
+      {
+        title: 'Aftercare',
+        icon: React.createElement(TbDental, { className: "w-6 h-6" }),
+        items: [
+          'Temporary crown protection',
+          'Avoid hard foods initially',
+          'Regular dental check-ups',
+          'Good oral hygiene maintenance'
+        ]
+      }
+    ]
   }
 ];
