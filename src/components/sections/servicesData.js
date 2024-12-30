@@ -305,9 +305,111 @@ export const services = [
   {
     icon: React.createElement(MdCleaningServices, { className: "w-8 h-8" }),
     title: 'Scaling and Polishing',
-    description: 'Professional cleaning for optimal oral hygiene.',
-    features: ['Deep cleaning', 'Stain removal', 'Gum health care', 'Fresh breath'],
-    info: []
+    description: 'Professional cleaning for optimal oral hygiene and gum health maintenance.',
+    features: [
+      'Deep cleaning & tartar removal',
+      'Professional stain removal',
+      'Gum disease prevention',
+      'Fresh breath maintenance'
+    ],
+    info: [
+      {
+        title: 'Deep Cleaning Results',
+        image: '/service-examples/cleaning/info/deep-cleaning-before-after-image.jpg',
+        description: 'Professional scaling and polishing removes stubborn tartar and plaque that regular brushing cannot eliminate. The procedure helps prevent gum disease and tooth decay while significantly improving the appearance of your teeth.',
+        placeholder: 'Before and after deep cleaning'
+      },
+      {
+        title: 'Fresh Breath Benefits',
+        image: '/service-examples/cleaning/info/fresh-breath-a-result-of-scaling-cleaning-image.jpg',
+        description: 'One of the immediate benefits of scaling and polishing is fresher breath. By removing bacteria, plaque, and tartar, we eliminate the primary causes of bad breath, giving you renewed confidence in your daily interactions.',
+        placeholder: 'Fresh breath after cleaning'
+      },
+      {
+        title: 'Gum Health Importance',
+        image: '/service-examples/cleaning/info/gum-health-image.jpeg',
+        description: 'Healthy gums are crucial for overall oral health. Regular scaling and polishing help prevent gingivitis and periodontitis by removing harmful bacteria and calculus that can cause gum inflammation and recession.',
+        placeholder: 'Healthy gums illustration'
+      },
+      {
+        title: 'Professional Cleaning Process',
+        image: '/service-examples/cleaning/info/process-of-cleaning-image.png',
+        description: 'Our thorough cleaning process involves ultrasonic scaling to remove tartar, manual scaling for precision cleaning, and polishing to leave your teeth smooth and shiny. The procedure is comfortable and typically takes 30-45 minutes.',
+        placeholder: 'Dental cleaning process'
+      }
+    ],
+    comparison: {
+      headers: ['Features', 'Regular Brushing', 'Professional Cleaning'],
+      rows: [
+        {
+          feature: 'Plaque Removal',
+          values: [
+            'Removes surface plaque only',
+            'Removes deep-seated plaque and tartar'
+          ]
+        },
+        {
+          feature: 'Stain Removal',
+          values: [
+            'Limited stain removal',
+            'Effective removal of most external stains'
+          ]
+        },
+        {
+          feature: 'Gum Health',
+          values: [
+            'Basic gum care',
+            'Deep cleaning below gumline'
+          ]
+        },
+        {
+          feature: 'Frequency',
+          values: [
+            'Twice daily',
+            'Every 6 months recommended'
+          ]
+        },
+        {
+          feature: 'Equipment Used',
+          values: [
+            'Toothbrush and floss',
+            'Professional scaling and polishing tools'
+          ]
+        }
+      ]
+    },
+    additionalInfo: [
+      {
+        title: 'Treatment Benefits',
+        icon: React.createElement(MdMedicalServices, { className: "w-6 h-6" }),
+        items: [
+          'Prevention of gum disease',
+          'Removal of stubborn stains',
+          'Fresh breath maintenance',
+          'Early detection of dental issues'
+        ]
+      },
+      {
+        title: 'Procedure Steps',
+        icon: React.createElement(FaTooth, { className: "w-6 h-6" }),
+        items: [
+          'Ultrasonic scaling for tartar removal',
+          'Manual scaling for precision',
+          'Polishing for smooth finish',
+          'Fluoride application if needed'
+        ]
+      },
+      {
+        title: 'Aftercare Tips',
+        icon: React.createElement(TbDental, { className: "w-6 h-6" }),
+        items: [
+          'Maintain regular brushing routine',
+          'Daily flossing recommended',
+          'Use recommended oral care products',
+          'Schedule regular follow-ups'
+        ]
+      }
+    ]
   },
   {
     icon: React.createElement(FaTooth, { className: "w-8 h-8" }),
