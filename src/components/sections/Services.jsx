@@ -117,6 +117,13 @@ ServiceCard.propTypes = {
       description: PropTypes.string.isRequired,
       placeholder: PropTypes.string.isRequired,
     })).isRequired,
+    comparison: PropTypes.shape({
+      headers: PropTypes.arrayOf(PropTypes.string).isRequired,
+      rows: PropTypes.arrayOf(PropTypes.shape({
+        feature: PropTypes.string.isRequired,
+        values: PropTypes.arrayOf(PropTypes.string).isRequired
+      })).isRequired
+    }),
     isInteractive: PropTypes.bool,
   }).isRequired,
   index: PropTypes.number.isRequired,
@@ -124,7 +131,7 @@ ServiceCard.propTypes = {
 };
 
 const InfoModal = ({ service, onClose }) => {
-  const bracesTypes = service.title === 'Dental Braces' ? [
+  const bracesTypes = service.title === 'Braces' ? [
     {
       title: 'Traditional Metal',
       icon: FaTeeth,
@@ -269,10 +276,10 @@ const InfoModal = ({ service, onClose }) => {
 
         {service.additionalInfo && (
           <div className="mt-8 pt-6 border-t border-gray-200">
-            {service.title === 'Dental Braces' || service.title === 'Crowns & Veneers' ? (
+            {service.title === 'Braces' || service.title === 'Crowns & Veneers' ? (
               <>
                 <h4 className="text-xl font-display font-bold text-primary mb-6">
-                  {service.title === 'Dental Braces' ? 'Your Guide to Different Braces Options' : 'When to Choose Each Option'}
+                  {service.title === 'Braces' ? 'Your Guide to Different Braces Options' : 'When to Choose Each Option'}
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {bracesTypes.map((type, index) => (
@@ -287,7 +294,7 @@ const InfoModal = ({ service, onClose }) => {
                   ))}
                 </div>
 
-                {service.title === 'Dental Braces' ? (
+                {service.title === 'Braces' ? (
                   <div className="mt-8 overflow-x-auto">
                     <table className="w-full text-sm">
                       <thead>
@@ -617,6 +624,13 @@ InfoModal.propTypes = {
       description: PropTypes.string.isRequired,
       placeholder: PropTypes.string.isRequired,
     })).isRequired,
+    comparison: PropTypes.shape({
+      headers: PropTypes.arrayOf(PropTypes.string).isRequired,
+      rows: PropTypes.arrayOf(PropTypes.shape({
+        feature: PropTypes.string.isRequired,
+        values: PropTypes.arrayOf(PropTypes.string).isRequired
+      })).isRequired
+    }),
     additionalInfo: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.shape({
