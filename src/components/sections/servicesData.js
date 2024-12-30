@@ -154,6 +154,95 @@ export const services = [
         image: '/service-examples/crowns-veneers/info/three-types-of-dental-crowns.jpg',
         description: 'Choose from various crown options including all-ceramic, porcelain-fused-to-metal (PFM), and zirconia. Each type has its unique advantages, and we\'ll help you select the best option based on your specific needs, location of the tooth, and aesthetic goals.',
         placeholder: 'Comparison of different crown types'
+      },
+      {
+        title: 'PFM vs Zirconia Crowns',
+        image: '/service-examples/crowns-veneers/info/pfm-vs-zerconia-crowns.jpg',
+        description: 'Compare the benefits of traditional Porcelain-Fused-to-Metal (PFM) crowns with modern Zirconia crowns. While PFM crowns have been reliable for decades, Zirconia offers superior aesthetics and durability without any metal base.',
+        placeholder: 'Comparison between PFM and Zirconia crowns'
+      },
+      {
+        title: 'Porcelain Veneers',
+        image: '/service-examples/crowns-veneers/info/Porcelain Veneers.jpg',
+        description: 'Porcelain veneers are ultra-thin shells of ceramic material bonded to the front of teeth. They\'re an excellent solution for improving your smile and can address multiple cosmetic concerns including discolored, worn down, chipped, misaligned, or irregularly shaped teeth.',
+        placeholder: 'Porcelain veneers explanation'
+      }
+    ],
+    comparison: {
+      headers: ['Features', 'Zirconia Crowns', 'PFM Crowns', 'Porcelain Veneers'],
+      rows: [
+        {
+          feature: 'Appearance',
+          values: [
+            'Most natural-looking, translucent',
+            'Natural but may show metal edge',
+            'Extremely natural, highly aesthetic'
+          ]
+        },
+        {
+          feature: 'Durability',
+          values: [
+            'Extremely strong, resistant to chips',
+            'Very durable with metal support',
+            'Durable but more delicate than crowns'
+          ]
+        },
+        {
+          feature: 'Tooth Reduction',
+          values: [
+            'Minimal tooth reduction needed',
+            'Moderate tooth reduction',
+            'Minimal tooth reduction'
+          ]
+        },
+        {
+          feature: 'Cost Range',
+          values: [
+            '$800 - $2,000',
+            '$500 - $1,500',
+            '$800 - $2,500 per tooth'
+          ]
+        },
+        {
+          feature: 'Longevity',
+          values: [
+            '15+ years with proper care',
+            '10-15 years average',
+            '10-15 years with good care'
+          ]
+        }
+      ]
+    },
+    additionalInfo: [
+      {
+        title: 'Crown Procedure',
+        icon: React.createElement(MdMedicalServices, { className: "w-6 h-6" }),
+        items: [
+          'Initial consultation and planning',
+          'Tooth preparation and impression',
+          'Temporary crown placement',
+          'Final crown fitting and adjustment'
+        ]
+      },
+      {
+        title: 'Veneer Process',
+        icon: React.createElement(FaTooth, { className: "w-6 h-6" }),
+        items: [
+          'Smile design consultation',
+          'Minimal tooth preparation',
+          'Custom fabrication',
+          'Bonding and final adjustments'
+        ]
+      },
+      {
+        title: 'Care Instructions',
+        icon: React.createElement(TbDental, { className: "w-6 h-6" }),
+        items: [
+          'Avoid very hard foods',
+          'Regular brushing and flossing',
+          'Regular dental check-ups',
+          'Night guard if recommended'
+        ]
       }
     ]
   },
