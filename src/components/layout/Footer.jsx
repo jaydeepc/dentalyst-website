@@ -33,7 +33,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <motion.img
-              src="/logo/logo-white.png"
+              src="/logo/logo-white-full.png"
               alt="Dentalyst Logo"
               className="h-28 mb-6"
               initial={{ opacity: 0 }}

@@ -39,9 +39,11 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed w-full z-50 bg-gradient-to-r from-primary-gradient via-primary-dark to-primary">
-      {/* Top Bar */}
-      <motion.div
+    <header className="fixed w-full z-50">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-gradient via-primary-dark to-primary-dark shadow-lg"></div>
+      <div className="relative">
+        {/* Top Bar */}
+        <motion.div
         initial="hidden"
         animate="visible"
         variants={topBarVariants}
@@ -78,7 +80,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="relative">
             <motion.img 
-              src="/logo/logo-white.png" 
+              src="/logo/logo-white-full.png" 
               alt="Dentalyst Logo" 
               className="h-16 sm:h-20 md:h-24"
               whileHover={{ scale: 1.05 }}
@@ -180,6 +182,7 @@ const Header = () => {
           )}
         </AnimatePresence>
       </motion.nav>
+      </div>
     </header>
   );
 };
