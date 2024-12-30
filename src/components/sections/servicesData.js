@@ -414,9 +414,111 @@ export const services = [
   {
     icon: React.createElement(FaTooth, { className: "w-8 h-8" }),
     title: 'Tooth Color Fillings',
-    description: 'Natural-looking restorations that blend perfectly.',
-    features: ['Invisible repairs', 'Durable material', 'Immediate results', 'Preserves tooth'],
-    info: []
+    description: 'Natural-looking restorations that blend perfectly with your teeth to restore function and aesthetics.',
+    features: [
+      'Invisible repairs',
+      'Durable composite material',
+      'Single visit treatment',
+      'Preserves tooth structure'
+    ],
+    info: [
+      {
+        title: 'Understanding Tooth Decay',
+        image: '/service-examples/fillings/info/stages-of-tooth-decay.jpg',
+        description: 'Tooth decay progresses through several stages, from initial enamel damage to deep cavity formation. Early detection and treatment with tooth-colored fillings can prevent further damage and preserve your natural tooth structure.',
+        placeholder: 'Stages of tooth decay progression'
+      },
+      {
+        title: 'Types of Dental Fillings',
+        image: '/service-examples/fillings/info/four-types-of-dental-filling.jpg',
+        description: 'Modern dentistry offers various filling materials, each with unique properties. We specialize in composite resin fillings that perfectly match your natural tooth color while providing excellent durability and protection.',
+        placeholder: 'Different types of dental fillings'
+      },
+      {
+        title: 'Aesthetic Advantage',
+        image: '/service-examples/fillings/info/difference-between-tooth-color-and-non-tooth-color-filling-image.jpg',
+        description: 'Tooth-colored fillings offer superior aesthetics compared to traditional amalgam fillings. They blend seamlessly with your natural teeth, making them ideal for visible areas of your smile.',
+        placeholder: 'Comparison of filling types'
+      },
+      {
+        title: 'Treatment Process',
+        image: '/service-examples/fillings/info/steps-of-tooth-filling-image.jpg',
+        description: 'Our filling procedure is quick and comfortable. We remove the decay, clean the cavity, and apply the composite material in layers, shaping and polishing it to match your natural tooth structure perfectly.',
+        placeholder: 'Filling procedure steps'
+      }
+    ],
+    comparison: {
+      headers: ['Features', 'Tooth-Colored Fillings', 'Traditional Amalgam'],
+      rows: [
+        {
+          feature: 'Appearance',
+          values: [
+            'Matches natural tooth color',
+            'Silver/gray metallic appearance'
+          ]
+        },
+        {
+          feature: 'Durability',
+          values: [
+            '5-7 years with proper care',
+            '10-15 years average'
+          ]
+        },
+        {
+          feature: 'Tooth Preservation',
+          values: [
+            'Requires less tooth removal',
+            'Needs more tooth structure removal'
+          ]
+        },
+        {
+          feature: 'Application Time',
+          values: [
+            '20-30 minutes per tooth',
+            '15-20 minutes per tooth'
+          ]
+        },
+        {
+          feature: 'Cost',
+          values: [
+            'Moderately higher',
+            'More economical'
+          ]
+        }
+      ]
+    },
+    additionalInfo: [
+      {
+        title: 'Treatment Benefits',
+        icon: React.createElement(MdMedicalServices, { className: "w-6 h-6" }),
+        items: [
+          'Natural-looking results',
+          'Immediate restoration',
+          'Strengthens damaged tooth',
+          'Mercury-free material'
+        ]
+      },
+      {
+        title: 'Procedure Steps',
+        icon: React.createElement(FaTooth, { className: "w-6 h-6" }),
+        items: [
+          'Decay removal and cleaning',
+          'Layer-by-layer composite application',
+          'Shaping and adjusting bite',
+          'Final polishing'
+        ]
+      },
+      {
+        title: 'Aftercare',
+        icon: React.createElement(TbDental, { className: "w-6 h-6" }),
+        items: [
+          'Wait 24 hours before heavy chewing',
+          'Maintain regular oral hygiene',
+          'Avoid very hard foods',
+          'Regular dental check-ups'
+        ]
+      }
+    ]
   },
   {
     icon: React.createElement(RiSurgicalMaskFill, { className: "w-8 h-8" }),
