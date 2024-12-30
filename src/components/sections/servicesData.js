@@ -1,4 +1,4 @@
-import { FaTooth } from 'react-icons/fa';
+import { FaTooth, FaTeeth } from 'react-icons/fa';
 import { MdCleaningServices, MdMedicalServices } from 'react-icons/md';
 import { RiSurgicalMaskFill, RiMentalHealthLine } from 'react-icons/ri';
 import { TbDental, TbCrown } from 'react-icons/tb';
@@ -6,6 +6,132 @@ import { IoColorPaletteOutline } from 'react-icons/io5';
 import React from 'react';
 
 export const services = [
+  {
+    icon: React.createElement(FaTeeth, { className: "w-8 h-8" }),
+    title: 'Braces',
+    description: 'Advanced orthodontic solutions for a perfectly aligned smile.',
+    features: [
+      'Metal & Ceramic braces',
+      'Clear aligners',
+      'Retainers',
+      'Bite correction'
+    ],
+    info: [
+      {
+        title: 'Types of Braces',
+        image: '/service-examples/braces/info/Metal-Vs-Ceramic-braces.webp',
+        description: 'Choose from traditional metal braces, more discreet ceramic options, or nearly invisible clear aligners. Each type has its advantages, and we\'ll help you select the best option based on your specific needs and lifestyle.',
+        placeholder: 'Different types of braces'
+      },
+      {
+        title: 'Clear Aligners',
+        image: '/service-examples/braces/info/clear-aligners.jpg',
+        description: 'Clear aligners offer a virtually invisible way to straighten your teeth. These custom-made, removable trays gradually shift your teeth into proper alignment while allowing you to maintain your regular oral hygiene routine and enjoy your favorite foods.',
+        placeholder: 'Clear aligner treatment'
+      }
+    ],
+    comparison: {
+      headers: ['Features', 'Metal Braces', 'Ceramic Braces', 'Clear Aligners'],
+      rows: [
+        {
+          feature: 'Visibility',
+          values: [
+            'Most noticeable, silver/gray colored brackets',
+            'Less noticeable, tooth-colored brackets',
+            'Nearly invisible clear plastic aligners'
+          ]
+        },
+        {
+          feature: 'Cost',
+          values: [
+            '$3,000 - $6,000',
+            '$4,000 - $8,000',
+            '$4,000 - $7,400'
+          ]
+        },
+        {
+          feature: 'Treatment Time',
+          values: [
+            '18-36 months',
+            '18-36 months',
+            '12-18 months for most cases'
+          ]
+        },
+        {
+          feature: 'Effectiveness',
+          values: [
+            'Highly effective for all cases',
+            'Very effective for most cases',
+            'Effective for mild to moderate cases'
+          ]
+        },
+        {
+          feature: 'Maintenance',
+          values: [
+            'Regular adjustments every 4-6 weeks',
+            'Regular adjustments every 4-6 weeks',
+            'New aligners every 1-2 weeks'
+          ]
+        },
+        {
+          feature: 'Comfort',
+          values: [
+            'Initial discomfort, may irritate cheeks',
+            'Similar to metal but smoother feel',
+            'Most comfortable, minimal irritation'
+          ]
+        },
+        {
+          feature: 'Food Restrictions',
+          values: [
+            'Yes - avoid hard, sticky foods',
+            'Yes - avoid hard, sticky foods',
+            'No - removable for eating'
+          ]
+        },
+        {
+          feature: 'Cleaning',
+          values: [
+            'More challenging, special tools needed',
+            'More challenging, special tools needed',
+            'Easy - remove aligners to clean'
+          ]
+        }
+      ]
+    },
+    additionalInfo: [
+      {
+        title: 'Treatment Process',
+        icon: React.createElement(MdMedicalServices, { className: "w-6 h-6" }),
+        items: [
+          'Initial consultation and assessment',
+          'Digital scanning and treatment planning',
+          'Regular adjustments and monitoring',
+          'Retention phase guidance'
+        ]
+      },
+      {
+        title: 'Types of Treatment',
+        icon: React.createElement(FaTeeth, { className: "w-6 h-6" }),
+        items: [
+          'Traditional metal braces',
+          'Ceramic (tooth-colored) braces',
+          'Clear aligners (removable)',
+          'Lingual braces (hidden behind teeth)'
+        ]
+      },
+      {
+        title: 'Care Instructions',
+        icon: React.createElement(TbDental, { className: "w-6 h-6" }),
+        items: [
+          'Proper brushing and flossing techniques',
+          'Foods to avoid during treatment',
+          'Emergency care guidelines',
+          'Regular follow-up visits'
+        ]
+      }
+    ]
+  },
   {
     icon: React.createElement(TbCrown, { className: "w-8 h-8" }),
     title: 'Crowns & Veneers',
